@@ -26,10 +26,15 @@ public class Main {
         // newArray = {5,4,3,2,1};
 
         // This is the longer version that compiles
-        newArray = new int[] {5, 4, 3, 2, 1};
 
+        //newArray = new int[] {5, 4, 3, 2, 1};
+        newArray = new int[5];
         System.out.println("The array list of newArray is:");
-        for(int i = 0; i <= (newArray.length-1); i++) {
+        for(int i = 0; i < newArray.length; i++) {
+            newArray[i] = newArray.length - i;
+        }
+        System.out.println("The array list of newArray is:");
+        for(int i = 0; i < (newArray.length); i++) {
             System.out.print(newArray[i] + " ");
         }
 
