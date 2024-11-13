@@ -1,5 +1,7 @@
 package heuser.luke;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -19,6 +21,10 @@ public class Main {
         System.out.printf("The length is: %d%n", arrayLength);
         System.out.printf("Last = %d%n", arrayInitializer[arrayLength - 1]);
 
+        for( int element : arrayInitializer){
+            System.out.print(element + " ");
+        }
+
 
         int[] newArray;
         // The anonymous array initializer can not be used in a statement outside
@@ -37,6 +43,35 @@ public class Main {
         for(int i = 0; i < (newArray.length); i++) {
             System.out.print(newArray[i] + " ");
         }
+
+        // this is the Enhanced For Loop. The first part, the element is the declaration statement.
+        //  The second part, is the array or some other collection variable.
+        System.out.println();
+        for(int element : newArray) {
+            System.out.print(element + " ");
+        }
+
+        System.out.println();
+        System.out.println(Arrays.toString(newArray));
+
+        String arrayList = Arrays.toString(newArray);
+        System.out.println(arrayList.length());
+
+
+        // This code: we are assigning an integer Array referenced to an object reference.
+         Object objectVariable = newArray;
+         if (objectVariable instanceof int[]) {
+             System.out.println("objectVariable is really an int array");
+         }
+
+
+         Object[] objectArray = new Object[3];
+         objectArray[0] = "Hello";
+         objectArray[1] = new StringBuilder("World");
+         // This is a nested array
+         objectArray[2] = newArray;
+
+
 
     }
 
